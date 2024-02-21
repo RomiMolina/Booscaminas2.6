@@ -47,8 +47,8 @@ type CellProps = {
 const Cell: React.FC<CellProps> = ({value, onClick, clicked}) => {
   return (
     <div
-      className={`h-8 w-8 border flex items-center justify-center ${
-        clicked ? "bg-gray-300" : "bg-gray-500"
+      className={`h-8 w-8 border flex items-center justify-center rounded-sm shadow-sm ${
+        clicked ? "bg-gray-300 text-black font-bold shadow-lg" : "bg-gray-400"
       }`}
       onClick={onClick}
     >
@@ -91,7 +91,7 @@ function App() {
         <p className="text-4xl font-bold text-center">Play now! </p>
         <div className="text-2xl font-bold">Time: {seconds} seconds</div>
         <section className="py-8">
-          <div className="grid" id="tablero">
+          <div className="grid rounded-lg" id="tablero">
             {MATRIX.map((row, rowIndex) =>
               row.map((cell, cellIndex) => (
                 <Cell
